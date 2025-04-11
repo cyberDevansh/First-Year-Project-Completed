@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="X-Frame-Options" content="DENY">
+    <meta name="X-XSS-Protection" content="1; mode=block">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>धर्मो रक्षति रक्षितः - Quiz</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <div class="theme-switch">
+        <input type="checkbox">
+    </div>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2><i class="fa fa-cog fa-spin"></i> CyberTools</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/keylogger"><i class="fas fa-keyboard"></i> Keylogger</a></li>
+                <li><a href="/steganography"><i class="fa-solid fa-eye-slash"></i> Steganography</a></li>
+                <li><a href="/pass-manager"><i class="fas fa-vault"></i> Password Manager</a></li>
+                <li><a href="/pass-generator"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="/malware-detector"><i class="fas fa-bug"></i> Malware Detector</a></li>
+                <li><a href="/quiz" class="active"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="/news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="/phishing-simulator"><i class="fas fa-fish"></i> Phishing Simulator</a></li>
+                <li><a href="/developers"><i class="fas fa-users"></i> Developers</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content animate__animated animate__fadeIn">
+                <h1 class="section-title">Cybersecurity Quiz</h1>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-info-circle"></i> About the Quiz</h2>
+                    <p>Test your knowledge of cybersecurity concepts with this interactive quiz. You have 60 seconds to answer 5 randomly selected questions from our pool of 30 cybersecurity questions.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-trophy"></i> Quiz Rules</h2>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> 60 seconds total time limit</li>
+                        <li><i class="fas fa-check-circle"></i> 5 random questions from 30</li>
+                        <li><i class="fas fa-star"></i> Score is based on correct answers</li>
+                        <li><i class="fas fa-list-ol"></i> Leaderboard shows all attempts</li>
+                    </ul>
+                </div>
+
+                <!-- Did You Know Section -->
+                <div class="did-you-know-container">
+                    <div class="did-you-know-wrapper">
+                        <div class="did-you-know-slide active">
+                            <h3>Did you know?</h3>
+                            <p>Keyloggers are often disguised as parental control tools — silently recording every keystroke.</p>
+                        </div>
+                        <div class="did-you-know-slide">
+                            <h3>Did you know?</h3>
+                            <p>Hackers can steal your login credentials through fake Wi-Fi hotspots called "Evil Twins."</p>
+                        </div>
+                        <div class="did-you-know-slide">
+                            <h3>Did you know?</h3>
+                            <p>Clicking a random PDF or image online can install malware on your device without you even knowing?</p>
+                        </div>
+                        <div class="did-you-know-slide">
+                            <h3>Did you know?</h3>
+                            <p>Even your smart fridge or TV can be used to bypass your mobile/laptop's Security— every smart device is a potential backdoor.</p>
+                        </div>
+                        <div class="did-you-know-slide">
+                            <h3>Did you know?</h3>
+                            <p>Over 300,000 new malware samples are created every single day — cybersecurity is a 24/7 battle.</p>
+                        </div>
+                        <div class="did-you-know-slide">
+                            <h3>Did you know?</h3>
+                            <p>Many free apps sell your personal data to third-party advertisers — you pay with privacy, not money.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name Input Form -->
+                <div id="nameForm" class="quiz-container">
+                    <h2>Enter Your Name</h2>
+                    <div class="form-group">
+                        <input type="text" id="playerName" placeholder="Your Name" class="form-input">
+                    </div>
+                    <button id="startQuiz" class="secure-button">
+                        <i class="fas fa-play"></i> Start Quiz
+                    </button>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quizContainer" class="quiz-container" style="display: none;">
+                    <div class="quiz-header">
+                        <div id="playerNameDisplay"></div>
+                        <div id="score">Score: 0</div>
+                        <div id="timer">Time: 60s</div>
+                    </div>
+
+                    <div id="questionsContainer">
+                        <h2 id="question"></h2>
+                        <div id="options" class="options-container"></div>
+                    </div>
+                </div>
+
+                <!-- Result Container -->
+                <div id="resultContainer" class="quiz-container" style="display: none;">
+                    <h2>Quiz Complete!</h2>
+                    <div class="result-details">
+                        <p id="finalScore"></p>
+                        <p id="timeTaken"></p>
+                    </div>
+                    <button id="restartButton" class="secure-button">
+                        <i class="fas fa-redo"></i> Take Quiz Again
+                    </button>
+                </div>
+
+                <!-- Leaderboard Container -->
+                <div id="leaderboardContainer" class="quiz-container">
+                    <h2><i class="fas fa-trophy"></i> Leaderboard</h2>
+                    <div class="leaderboard-controls">
+                        <button id="sortByDate" class="secure-button">
+                            <i class="fas fa-calendar"></i> Sort by Date
+                        </button>
+                        <button id="sortByScore" class="secure-button">
+                            <i class="fas fa-star"></i> Sort by Score
+                        </button>
+                    </div>
+                    <div class="leaderboard-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboardBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/quiz.js"></script>
+</body>
+
+</html>

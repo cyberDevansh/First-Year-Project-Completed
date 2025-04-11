@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>धर्मो रक्षति रक्षितः</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: #000;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .skip-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .skip-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .loading-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2em;
+            z-index: 0;
+        }
+
+        .play-button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 3;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-message">Loading...</div>
+    <div class="video-container">
+        <video id="intro-video" muted playsinline preload="auto">
+            <source src="/static/intro/lv_0_20250406010303.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <button class="play-button" id="playButton">Click to Play</button>
+    <button class="skip-button" onclick="skipToMain()">Skip Intro</button>
+
+    <script>
+        const video = document.getElementById('intro-video');
+        const loadingMessage = document.querySelector('.loading-message');
+        const playButton = document.getElementById('playButton');
+
+        // Function to start video playback
+        function startVideo() {
+            playButton.style.display = 'none';
+            loadingMessage.style.display = 'none';
+            
+            // First try to play with sound
+            video.muted = false;
+            video.play().catch(error => {
+                console.log("Play with sound failed, trying muted:", error);
+                // If that fails, try muted
+                video.muted = true;
+                video.play().catch(error => {
+                    console.log("Muted play also failed:", error);
+                    // If both fail, show play button
+                    playButton.style.display = 'block';
+                });
+            });
+        }
+
+        // Play button click handler
+        playButton.addEventListener('click', startVideo);
+
+        // Try to start video on any user interaction
+        document.addEventListener('click', startVideo);
+        document.addEventListener('keydown', startVideo);
+        document.addEventListener('touchstart', startVideo);
+        document.addEventListener('mousemove', startVideo);
+
+        // Function to handle video loading
+        video.addEventListener('loadeddata', function() {
+            loadingMessage.style.display = 'none';
+            // Try to start video
+            startVideo();
+        });
+        
+        // Redirect to dashboard when video ends
+        video.addEventListener('ended', function() {
+            window.location.href = '/dashboard';
+        });
+
+        // Function to skip video and go to dashboard
+        function skipToMain() {
+            window.location.href = '/dashboard';
+        }
+
+        // Add keyboard shortcut to skip (Press Spacebar or Enter)
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' || event.code === 'Enter') {
+                skipToMain();
+            }
+        });
+
+        // Try to start video on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a small delay to ensure everything is loaded
+            setTimeout(startVideo, 100);
+        });
+
+        // Try to start video when the page becomes visible
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                startVideo();
+            }
+        });
+    </script>
+</body>
+</html> 

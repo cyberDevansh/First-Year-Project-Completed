@@ -1,0 +1,73 @@
+body {     
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.login-border {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  
+}
+.login-border input[type="text"],
+.login-border input[type="password"] {
+    width: calc(100% - 50px);
+    padding: 10px;
+    background-color: #FAFAFA;
+    margin: 10px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+.login-border input[type="submit"] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    background-color: #4CB5F9;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-border .signup-link {
+    margin: 20px;
+    font-size: 14px;
+}
+.login-border .signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+.forgot-pswd {
+    margin-right: 10px;
+}
+.login-border .forgot-pswd {
+    margin: 20px;
+    font-size: 14px;
+}
+.login-border .forgot-pswd a {
+    color: #52379B;
+    text-decoration: none;
+}
+.card{
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+padding:10px 40px;
+display:flex;
+flex-wrap:wrap;
+width:270px;
+margin:auto;
+text-align:centre;
+
+}
+
+

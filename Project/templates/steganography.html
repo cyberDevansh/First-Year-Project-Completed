@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="X-Frame-Options" content="DENY">
+    <meta name="X-XSS-Protection" content="1; mode=block">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>धर्मो रक्षति रक्षितः - Steganography</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <input type="checkbox">
+    </div>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo"><h2><i class="fa fa-cog fa-spin"></i> CyberTools</h2></div>
+            <ul class="nav-links">
+                <li><a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/keylogger"><i class="fas fa-keyboard"></i> Keylogger</a></li>
+                <li><a href="/steganography" class="active"><i class="fa-solid fa-eye-slash"></i> Steganography</a></li>
+                <li><a href="/pass-manager"><i class="fas fa-vault"></i> Password Manager</a></li>
+                <li><a href="/pass-generator"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="/malware-detector"><i class="fas fa-bug"></i> Malware Detector</a></li>
+                <li><a href="/quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="/news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="/phishing-simulator"><i class="fas fa-fish"></i> Phishing Simulator</a></li>
+                <li><a href="/developers"><i class="fas fa-users"></i> Developers</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content animate__animated animate__fadeIn">
+                <h1 class="section-title">Steganography Tool</h1>
+                
+                <div class="info-card">
+                    <h2><i class="fas fa-info-circle"></i> About Steganography</h2>
+                    <p>Steganography is the art of hiding information inside other files such as images, audio, or text. Unlike encryption, which scrambles data, steganography conceals the data in a way that makes it invisible to the naked eye.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Advanced encryption for hidden data</li>
+                        <li><i class="fas fa-fingerprint"></i> Unique key generation for each message</li>
+                        <li><i class="fas fa-shield-virus"></i> Tamper detection capabilities</li>
+                        <li><i class="fas fa-clock"></i> Time-based message expiration</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-check-circle"></i> Best Practices</h2>
+                    <ul>
+                        <li><i class="fas fa-image"></i> Use high-quality images for better results</li>
+                        <li><i class="fas fa-key"></i> Keep your encryption keys secure</li>
+                        <li><i class="fas fa-sync"></i> Regularly update your security settings</li>
+                        <li><i class="fas fa-user-lock"></i> Share keys through secure channels</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-graduation-cap"></i> Educational Value</h2>
+                    <p>This tool helps users understand:</p>
+                    <ul>
+                        <li><i class="fas fa-lightbulb"></i> How steganography works</li>
+                        <li><i class="fas fa-exclamation-circle"></i> The importance of data security</li>
+                        <li><i class="fas fa-shield-alt"></i> Ways to protect sensitive information</li>
+                        <li><i class="fas fa-book"></i> Best practices for secure communication</li>
+                    </ul>
+                </div>
+
+                <div class="info-card disclaimer">
+                    <h2 style="color: red;"><i class="fas fa-exclamation-triangle"></i> <span>Important Notice</span></h2>
+                    <p>This tool is for <strong>Educational Purposes Only</strong>. Always use steganography responsibly and in accordance with <strong>Privacy Laws & Regulations</strong>. No data is stored or transmitted outside your browser. Do not use this tool for any <strong style="font-family: 'Times New Roman', serif;"><b>Illegal or Malicious Activities</b></strong>.</p>
+                </div>
+
+                <div class="info-card development-notice">
+                    <h2><i class="fas fa-tools"></i> Development Status</h2>
+                    <p>This feature is currently under development. We are working hard to bring you a comprehensive malware detection solution that will help protect your digital assets. Stay tuned for updates!</p>
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                        <span>Development Progress: 85%</span>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <div class="demo-controls">
+                        <button id="encodeBtn" class="secure-button">
+                            <i class="fas fa-lock"></i> Encode Message
+                        </button>
+                        <button id="decodeBtn" class="secure-button">
+                            <i class="fas fa-unlock"></i> Decode Message
+                        </button>
+                        <button id="clearBtn" class="secure-button">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+
+                    <div class="demo-area">
+                        <div class="input-area">
+                            <div class="file-upload-container">
+                                <div class="upload-area" id="uploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Drag and drop your image here or click to browse</p>
+                                    <input type="file" id="fileInput" accept="image/*" hidden>
+                                </div>
+                                <div class="preview-container" id="previewContainer" style="display: none;">
+                                    <img id="imagePreview" src="" alt="Preview">
+                                    <div class="preview-overlay">
+                                        <button class="secure-button" id="changeImage">
+                                            <i class="fas fa-exchange-alt"></i> Change Image
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="message-input">
+                                <label for="secretMessage"><i class="fas fa-key"></i> Secret Message</label>
+                                <textarea id="secretMessage" class="secure-input" placeholder="Enter your secret message here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="output-area">
+                            <div class="result-container" id="resultContainer" style="display: none;">
+                                <h3><i class="fas fa-image"></i> Result</h3>
+                                <div class="result-image">
+                                    <img id="resultImage" src="" alt="Result">
+                                </div>
+                                <div class="result-actions">
+                                    <button class="secure-button" id="downloadBtn">
+                                        <i class="fas fa-download"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="decode-result" id="decodeResult" style="display: none;">
+                                <h3><i class="fas fa-unlock"></i> Decoded Message</h3>
+                                <div class="decoded-message" id="decodedMessage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/steganography.js"></script>
+</body>
+</html> 

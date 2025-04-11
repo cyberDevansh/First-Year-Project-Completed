@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="X-Frame-Options" content="DENY">
+    <meta name="X-XSS-Protection" content="1; mode=block">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>धर्मो रक्षति रक्षितः - Password Manager</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <div class="theme-switch">
+        <input type="checkbox">
+    </div>
+    <div class="container">
+
+        <nav class="sidebar">
+            <div class="logo">
+                <h2><i class="fa fa-cog fa-spin"></i> CyberTools</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/keylogger"><i class="fas fa-keyboard"></i> Keylogger</a></li>
+                <li><a href="/steganography"><i class="fa-solid fa-eye-slash"></i> Steganography</a></li>
+                <li><a href="/pass-manager" class="active"><i class="fas fa-vault"></i> Password Manager</a></li>
+                <li><a href="/pass-generator"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="/malware-detector"><i class="fas fa-bug"></i> Malware Detector</a></li>
+                <li><a href="/quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="/news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="/phishing-simulator"><i class="fas fa-fish"></i> Phishing Simulator</a></li>
+                <li><a href="/developers"><i class="fas fa-users"></i> Developers</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content animate__animated animate__fadeIn">
+                <h1 class="section-title">Password Manager</h1>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-info-circle"></i> About Password Manager</h2>
+                    <p>A password manager is a secure digital vault that stores and manages your passwords and sensitive information. It helps you maintain strong, unique passwords for all your accounts while requiring you to remember only one master password.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Passwords available Remotely, but only for the user</li>
+                        <li><i class="fas fa-eye-slash"></i> Passwords hidden by default</li>
+                        <li><i class="fas fa-copy"></i> One-click copy functionality</li>
+                        <li><i class="fas fa-search"></i> Quick search through saved passwords</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2>Security Considerations</h2>
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Use a strong master password</li>
+                        <li><i class="fas fa-user-shield"></i> Enable two-factor authentication</li>
+                        <li><i class="fas fa-history"></i> Regular password updates</li>
+                        <li><i class="fas fa-cloud"></i> Secure cloud backup</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2>How It Works</h2>
+                    <ol>
+                        <li>Create a master password (the only one you need to remember)</li>
+                        <li>Add your existing passwords or generate new ones</li>
+                        <li>Access your passwords securely across devices</li>
+                        <li>Auto-fill login forms with a single click</li>
+                    </ol>
+                </div>
+
+                <div class="info-card disclaimer">
+                    <h2 style="color: red;"><i class="fas fa-exclamation-triangle"></i> <span>Important Notice</span></h2>
+                    <p>This password manager stores data on the server. For added security, consider using a master password or encryption. Always ensure you're using a secure connection when managing passwords.</p>
+                </div>
+
+                <div class="manager-container">
+                    <div class="manager-header">
+                        <button id="addPasswordBtn" class="secure-button">
+                            <i class="fas fa-plus"></i> Add New Password
+                        </button>
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Search passwords...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <form id="passwordForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="website">Website/Service</label>
+                            <input type="text" id="website" class="secure-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username/Email</label>
+                            <input type="text" id="username" class="secure-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="secure-input" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="secure-button">
+                                <i class="fas fa-save"></i> Save Password
+                            </button>
+                            <button type="button" class="secure-button" onclick="togglePasswordForm()">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="passwordList" class="password-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/pass-manager.js"></script>
+</body>
+
+</html>

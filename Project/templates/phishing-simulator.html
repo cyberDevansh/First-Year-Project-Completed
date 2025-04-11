@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>धर्मो रक्षति रक्षितः - Phishing Simulator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts for Realism -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Instagram/Pinterest Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard">
+    <div class="theme-switch">
+        <input type="checkbox">
+    </div>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2><i class="fa fa-cog fa-spin"></i> CyberTools</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/keylogger"><i class="fas fa-keyboard"></i> Keylogger</a></li>
+                <li><a href="/steganography"><i class="fa-solid fa-eye-slash"></i> Steganography</a></li>
+                <li><a href="/pass-manager"><i class="fas fa-vault"></i> Password Manager</a></li>
+                <li><a href="/pass-generator"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="/malware-detector"><i class="fas fa-bug"></i> Malware Detector</a></li>
+                <li><a href="/quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="/news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="/phishing-simulator" class="active"><i class="fas fa-fish"></i> Phishing Simulator</a></li>
+                <li><a href="/developers"><i class="fas fa-users"></i> Developers</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content animate__animated animate__fadeIn">
+                <header class="hero-section">
+                    <h1>Phishing Simulator</h1>
+                    <p class="subtitle">Test your ability to identify phishing attempts</p>
+                </header>
+
+                <section class="phishing-simulator">
+                    <div class="simulation-controls">
+                        <button class="secure-button" id="startSimulation"><i class="fas fa-play"></i> Start Simulation</button>
+                        <button class="secure-button" id="resetSimulation" disabled><i class="fas fa-redo"></i> Reset Simulation</button>
+                    </div>
+
+                    <div class="simulation-display">
+                        <div class="email-container">
+                            <h3>Email Preview</h3>
+                            <div class="email-content" id="emailContent">
+                                <p>Click "Start Simulation" to begin.</p>
+                            </div>
+                            <div class="email-actions" id="emailActions" style="display: none;">
+                                <button class="secure-button" data-action="safe"><i class="fas fa-check"></i> Mark as Safe</button>
+                                <button class="secure-button" data-action="phishing"><i class="fas fa-exclamation-triangle"></i> Mark as Phishing</button>
+                            </div>
+                        </div>
+                        <div class="feedback-container">
+                            <h3>Feedback</h3>
+                            <div class="score-board">
+                                <p>Correct: <span id="correctCount">0</span></p>
+                                <p>Incorrect: <span id="incorrectCount">0</span></p>
+                            </div>
+                            <div class="feedback-message" id="feedbackMessage">
+                                <p>Test your phishing detection skills!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phishing-tips">
+                        <h3><i class="fas fa-lightbulb"></i> Phishing Detection Tips</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> Verify the sender's email address</li>
+                            <li><i class="fas fa-spell-check"></i> Look for spelling or grammar errors</li>
+                            <li><i class="fas fa-clock"></i> Be cautious of urgent demands</li>
+                            <li><i class="fas fa-link"></i> Hover over links before clicking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Login Simulation Section -->
+                    <div class="login-simulation">
+                        <h3>Try a Fake Login Page</h3>
+                        <p class="subtitle">Can you spot the phishing clues?</p>
+                        <div class="platform-buttons">
+                            <button class="platform-btn" onclick="window.open('/tools/phishingmodels/google.html', '_blank')" data-platform="google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button class="platform-btn" onclick="window.open('/tools/phishingmodels/fb.html', '_blank')" data-platform="facebook">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </button>
+                            <button class="platform-btn" onclick="window.open('/tools/phishingmodels/insta.html', '_blank')" data-platform="instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </button>
+                            <button class="platform-btn" onclick="window.open('/tools/phishingmodels/print.html', '_blank')" data-platform="pinterest">
+                                <i class="fab fa-pinterest"></i> Pinterest
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

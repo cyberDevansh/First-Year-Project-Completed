@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Login Page</title>
+    <link rel="stylesheet" href="print.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Using local images with correct paths and extensions -->
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/1.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/2.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/3.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/4.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/5.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/6.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/7.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/8.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/9.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/10.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/11.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/12.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/13.jpg')"></div>
+            <div class="pin" style="background-image: url('../../static/imgs/phishing/14.jpg')"></div>
+        </div>
+        <div class="login-modal">
+            <div class="login-content">
+                <img src="https://api.iconify.design/logos:pinterest.svg" alt="Pinterest Logo" class="logo">
+                <h2>Log in to see more</h2>
+                <form id="loginForm">
+                    <input type="email" placeholder="Email address" required>
+                    <input type="password" placeholder="Password" required>
+                    <a href="#" class="forgot-password">Forgotten your password?</a>
+                    <button type="submit">Log in</button>
+                </form>
+                <h5>OR</h5>
+                <div class="social-login">
+                    <button class="facebook-btn" onclick="continueWithFacebook()"><i class="fa-brands fa-facebook"></i>Continue with Facebook</button>
+                    <button class="google-btn" onclick="continueWithGoogle()"><i class="fa-brands fa-google"></i>Continue with Google</button>
+                </div>
+                <p>By continuing, you agree to Pinterest's <a href="#">Terms of Service</a> and acknowledge you've read our <a href="#">Privacy Policy</a>. Notice at <a href="#">collection</a>.</p>
+                <p>Not on Pinterest yet? <a href="#">Sign up!</a></p>
+                <p>Are you a business? <a href="#">Get started here!</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="warning.js"></script>
+</body>
+</html>

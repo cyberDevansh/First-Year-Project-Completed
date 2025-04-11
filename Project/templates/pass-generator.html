@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
+    <meta name="X-Content-Type-Options" content="nosniff">
+    <meta name="X-Frame-Options" content="DENY">
+    <meta name="X-XSS-Protection" content="1; mode=block">
+    <meta name="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>धर्मो रक्षति रक्षितः - Password Generator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <div class="theme-switch">
+        <input type="checkbox">
+    </div>
+    <div class="container">
+
+        <nav class="sidebar">
+            <div class="logo">
+                <h2><i class="fa fa-cog fa-spin"></i> CyberTools</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/keylogger"><i class="fas fa-keyboard"></i> Keylogger</a></li>
+                <li><a href="/steganography"><i class="fa-solid fa-eye-slash"></i> Steganography</a></li>
+                <li><a href="/pass-manager"><i class="fas fa-vault"></i> Password Manager</a></li>
+                <li><a href="/pass-generator" class="active"><i class="fas fa-key"></i> Password Generator</a></li>
+                <li><a href="/malware-detector"><i class="fas fa-bug"></i> Malware Detector</a></li>
+                <li><a href="/quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                <li><a href="/news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="/phishing-simulator"><i class="fas fa-fish"></i> Phishing Simulator</a></li>
+                <li><a href="/developers"><i class="fas fa-users"></i> Developers</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="content animate__animated animate__fadeIn">
+                <h1 class="section-title">Password Generator</h1>
+                
+                <div class="info-card">
+                    <h2><i class="fas fa-info-circle"></i> About Password Generator</h2>
+                    <p>A password generator creates strong, random passwords that are difficult to guess or crack. It helps you maintain good security practices by generating unique passwords for each of your accounts.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-shield-alt"></i> Security Tips</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Use passwords with at least 12 characters</li>
+                        <li><i class="fas fa-check"></i> Include a mix of uppercase, lowercase, numbers, and symbols</li>
+                        <li><i class="fas fa-check"></i> Never reuse passwords across different accounts</li>
+                        <li><i class="fas fa-check"></i> Consider using a password manager to store your passwords</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2>How It Works</h2>
+                    <ol>
+                        <li>Select password length and character types</li>
+                        <li>Choose complexity requirements</li>
+                        <li>Generate random password</li>
+                        <li>Copy and use the generated password</li>
+                    </ol>
+                </div>
+
+                <div class="info-card disclaimer">
+                    <h2 style="color: red;"><i class="fas fa-exclamation-triangle"></i> <span>Important Notice</span></h2>
+                    <p>This tool generates passwords locally in your browser. No data is sent to any server. Always ensure you're using a secure connection when creating and storing passwords.</p>
+                </div>
+
+                <div class="generator-container">
+                    <div class="password-display">
+                        <input type="text" id="passwordDisplay" readonly>
+                        <button id="copyBtn" class="secure-button">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+
+                    <div class="password-options">
+                        <div class="option-group">
+                            <label for="lengthSlider">Password Length: <span id="lengthValue">12</span></label>
+                            <input type="range" id="lengthSlider" min="8" max="32" value="12">
+                        </div>
+
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="uppercaseCheck" checked>
+                                Include Uppercase Letters
+                            </label>
+                            <label>
+                                <input type="checkbox" id="lowercaseCheck" checked>
+                                Include Lowercase Letters
+                            </label>
+                            <label>
+                                <input type="checkbox" id="numbersCheck" checked>
+                                Include Numbers
+                            </label>
+                            <label>
+                                <input type="checkbox" id="symbolsCheck" checked>
+                                Include Symbols
+                            </label>
+                        </div>
+
+                        <div class="strength-meter">
+                            <label>Password Strength:</label>
+                            <div class="strength-bar">
+                                <div id="strengthIndicator" class="strength-indicator"></div>
+                            </div>
+                            <span id="strengthText">Strong</span>
+                        </div>
+
+                        <button id="generateBtn" class="secure-button">
+                            <i class="fas fa-sync"></i> Generate Password
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/pass-generator.js"></script>
+</body>
+
+</html>
