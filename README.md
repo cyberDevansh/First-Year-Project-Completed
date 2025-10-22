@@ -14,47 +14,54 @@ Encourages ethical behavior and legal, defensive use only.
 Note: This repo contains no harmful code. Any potentially dangerous demonstrations must be simulated, consented, and run in an isolated environment.
 
 
+
 <h1>Quick Start (the simplest & fastest way to present at the stall)</h1>
-1.Clone the repo:
+
+1. Clone the repo:
 git clone https://github.com/cyberDevansh/First-Year-Project-Completed.git
 
-2.Create a virtual env and install requirements:
+2. Create a virtual env and install requirements:
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
-3.Start the demo UI (simple CLI or browser page):
+3. Start the demo UI (simple CLI or browser page):
 python app.py
 
-4.Click the link and you will enter your website.
+4. Click the link and you will enter your website.
+
+
 
 <h1>Why this project? (one-liner)</h1>
-Teach people defensive hygiene by showing how simple attacks look and giving immediate, practical countermeasures.
+<b><i>Teach people defensive hygiene by showing how simple attacks look and giving immediate, practical countermeasures.</i></b>
 
 
 
 <h1>---Demo features---</h1>
 
-Password Generator
+<ul>
+  <li>Password Generator</li>
 
-Generates strong passwords.
+ <li>Generates strong passwords.</li>
 
-Explains entropy and why length + variety matters.
+ <li>Explains entropy and why length + variety matters.</li>
 
-Live example & copy-to-clipboard.
+ <li>Live example & copy-to-clipboard.</li>
 
-Simulated Keylogger (educational)
+ <li>Simulated Keylogger (educational)</li>
 
-Simulated only. Shows how keystrokes can be captured in an isolated environment using sample input.
+ <li>Simulated only. Shows how keystrokes can be captured in an isolated environment using sample input.</li>
 
-Explains how keyloggers are delivered (phishing attachments, malicious installers) and how to detect/remove them.
+ <li>Explains how keyloggers are delivered (phishing attachments, malicious installers) and how to detect/remove them.</li>
 
-Image Steganography Demo
+ <li>Image Steganography Demo</li>
 
-Hide a short text message into a copy of an image and later reveal it.
+ <li>Hide a short text message into a copy of an image and later reveal it.</li>
 
-Emphasize legitimate uses (watermarking, metadata) and legal/ethical concerns.
+ <li>Emphasize legitimate uses (watermarking, metadata) and legal/ethical concerns.</li>
 
-Short Defensive Guide — “How not to get hacked”
+ <li>Short Defensive Guide — “How not to get hacked”</li>
 
-Concise, practical tips you can hand out as a flyer.
+ <li>Concise, practical tips you can hand out as a flyer.</li>
+
+</ul>
