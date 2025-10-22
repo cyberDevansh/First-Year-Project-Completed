@@ -18,7 +18,7 @@ Note: This repo contains no harmful code. Any potentially dangerous demonstratio
 <h1>Quick Start (the simplest & fastest way to present at the stall)</h1>
 
 1. Clone the repo:
-git clone https://github.com/cyberDevansh/First-Year-Project-Completed.git
+git clone https://github.com/cyberDevansh/First-Year-Tech-Fest-Project.git
 
 2. Create a virtual env and install requirements:
 python -m venv venv
