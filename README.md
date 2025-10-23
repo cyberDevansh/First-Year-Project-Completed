@@ -1,4 +1,27 @@
-<a href="https://deepscan.io/dashboard#view=project&tid=28285&pid=30508&bid=980808"><img src="https://deepscan.io/api/teams/28285/projects/30508/branches/980808/badge/grade.svg" alt="DeepScan grade"></a>
+<h1 align="center">🔥 Tech Fest Project 🔥</h1>
+
+<p align="center">
+  <span style="float:left;">
+    <a href="https://deepscan.io/dashboard#view=project&tid=28285&pid=30508&bid=980808">
+      <img src="https://deepscan.io/api/teams/28285/projects/30508/branches/980808/badge/grade.svg" alt="DeepScan grade">
+    </a>
+  </span>
+
+  <span style="float:right;">
+    <img src="https://img.shields.io/badge/Status-Active-success">
+  </span>
+</p>
+<br>
+<p align="center">
+  <a href="https://github.com/cyberDevansh">
+    <img src="https://img.shields.io/badge/GitHub-Follow-black?logo=github">
+  </a>
+</p>
+
+<div style="clear: both;"></div>
+
+
+
 
 # Project overview
 
@@ -31,17 +54,16 @@ pip install -r requirements.txt
 python app.py
 ```
 
-5. Open the UI in a browser:
+5. Open the UI in a browser (or click the ctrl+click in terminal link):
 
 - http://127.0.0.1:5000/
 
 
-6. ## If you do not want to do all these steps then simply use this only after creating the virtual environment:
-
+6. ## Or Use this :
 -$env:FLASK_APP = 'app.py'; python -m flask run --host=0.0.0.0 --port=5000
 
 Notes:
-- If PowerShell blocks the venv activation, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` first.
+- If PowerShell blocks the venv activation, run ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process``` first.
 - Keep the demo local and do not run the keylogger or phishing templates on production or shared machines.
 
 ## Why this project?
@@ -51,13 +73,19 @@ Teach defensive hygiene by demonstrating simple attacks and showing immediate, p
 ## Tools (short descriptions)
 
 This project includes several small tools/demos located in the `Project/tools` directory. Each entry below is 1–2 lines describing purpose and risk.
+## What each file does (quick)
 
-- `password_generator.py` — Generates cryptographically-random passwords using secure primitives (`secrets`) and provides a simple strength heuristic; safe and useful for teaching why length/variety matters.
-- `password_manager.py` — Example encrypted password store using a master password and `cryptography.Fernet`; demonstrates basic encryption workflows (NOT production-grade: uses fixed salt).
-- `keylogger.py` — Simulated keylogger using `pynput` that records keystrokes to a local `log.txt`; intended only for controlled demos and teaching how keyloggers work and how to detect/remove them.
-- `phishingmodels/` — A set of static phishing-page templates (Facebook/Google/Instagram/print) plus `warning.js` that shows a caution banner; used only for simulation and awareness (do not deploy these pages publicly).
-- `phishingmodels/` — A set of static phishing-page templates (Facebook/Google/Instagram/print) plus `warning.js` that shows a caution banner; used only for simulation and awareness (do not deploy these pages publicly).
-- `steganography/` (demo) — Simple image steganography demo used to hide/recover short text messages inside image copies; intended only for educational purposes and not optimized for large payloads.
+- **password_generator.py** — Makes secure, random passwords using Python’s `secrets`. Shows why longer + mixed characters matter for strength. Good for learning secure password practices.
+
+- **password_manager.py** — A small encrypted password store that uses a master password and `cryptography.Fernet`. Demonstrates how encryption and safe storage work (not production-ready — for demo/learning).
+
+- **keylogger.py** — A simulated keylogger using `pynput` that writes keystrokes to `log.txt`. Only for controlled demos and learning how keyloggers operate and how to spot or remove them.
+
+- **phishingmodels/** — Static demo pages (Facebook/Google/Instagram/print) plus `warning.js` that shows a caution banner. Used only for simulation and awareness — **do not publish these pages**.
+
+- **steganography/** (demo) — Simple image steganography that hides and recovers short text messages inside images. Educational demo — not meant for large data or real-world secret-keeping.
+
+> ⚠️ **Important:** These are learning tools and demos. They show how techniques work so you can defend against them or understand security. **Do not use them for harmful or illegal activities.**
 
 ## Safety & ethics
 
@@ -71,14 +99,3 @@ This project includes several small tools/demos located in the `Project/tools` d
 - `templates/` and `static/` — Web UI files used by `app.py`.
 - `requirements.txt` — Python dependencies for running the demo (Flask, keyboard, python-dotenv, etc.).
 
-## Troubleshooting
-
-- If you get ModuleNotFoundError for `pynput`, run `pip install pynput` inside the activated venv.
-- Favicon 404s are harmless if `static/favicon.ico` is missing.
-
-### Why `python app.py` may work on other machines without the full venv steps
-
-- Some systems have the required Python packages installed globally (or the user previously installed `pynput`, `Flask`, etc.), so running `python app.py` works without creating a virtual environment.
-- Using a virtual environment keeps dependencies isolated and prevents version conflicts; it's the recommended, reproducible approach. If you prefer the simpler route and your system already has the packages, running `python app.py` is fine — just be aware of potential dependency/version differences.
-
-If you want, I can add a small `favicon.ico`, update `requirements.txt` to include `pynput`, or expand any tool's documentation.
